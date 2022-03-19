@@ -85,6 +85,7 @@ textarea {
 body {
     background-color: var(--body-color);
     color: var(--text-color);
+    height: 3000px;
 }
 
 h1,
@@ -113,6 +114,11 @@ button {
 img {
     max-width: 100%;
     height: auto;
+}
+
+// Change Background Header : 
+.scroll-header {
+    box-shadow: 0 4px 4px hsla(0, 0%, 4%, 0.3);
 }
 
 // *========================== End Global Settings ========================
@@ -316,7 +322,7 @@ img {
     .home__scroll {
         color: var(--first-color);
         right: -0.5rem;
-        bottom: 6rem;
+        bottom: 4rem;
         display: grid;
         row-gap: 2.25rem;
         justify-items: center;
@@ -331,4 +337,97 @@ img {
 }
 
 // *============================= End Home ================================
+// *=======================================================================
+// *=======================================================================
+// *============================= Start About =============================
+.about__container {
+    row-gap: 2.5rem;
+    .about__img {
+        width: 220px;
+        border-radius: 1.5rem;
+        justify-self: center;
+    }
+    .about__data {
+        text-align: center;
+        .about__info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            .about__box {
+                background-color: var(--container-color);
+                border-radius: 0.75rem;
+                padding: 0.75rem 0.5rem;
+                .about__icon {
+                    font-size: 1.5rem;
+                    color: var(--first-color);
+                    margin-bottom: .5rem;
+                }
+                .about__title {
+                    font-size: var(--small-font-size);
+                }
+                .about__subtitle {
+                    font-size: var(--tiny-font-size);
+                }
+            }
+        }
+        .about__description {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+// *============================= End About ===============================
+// *=======================================================================
+// *=======================================================================
+// *============================= Start Skills ============================
+.skills__container {
+    row-gap: 2rem;
+    padding-top: 1rem;
+    .skills__content {
+        background-color: var(--container-color);
+        padding: 1.5rem;
+        border-radius: 1.25rem;
+        .skills__title {
+            font-size: var(--normal-font-size);
+            font-weight: var(--font-medium);
+            color: var(--first-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .skill__box {
+            display: flex;
+            justify-content: center;
+            column-gap: 2.5rem;
+            .skill__group {
+                display: grid;
+                align-content: flex-start;
+                row-gap: 1rem;
+                .skill__data {
+                    display: flex;
+                    column-gap: 0.5rem;
+                    .bxs-badge-check {
+                        font-size: 1rem;
+                        color: var(--first-color);
+                    }
+                    .skill__name {
+                        font-size: var(--normal-font-size);
+                        font-weight: var(--font-medium);
+                        line-height: 18px;
+                    }
+                    .skills_level {
+                        font-size: var(--tiny-font-size);
+                        font-weight: var(--font-medium);
+                    }
+                }
+            }
+            .second {
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 2.5rem;
+            }
+        }
+    }
+}
+
+// *============================= End Skills ==============================
 // *=======================================================================
