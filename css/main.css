@@ -430,7 +430,8 @@ img {
 
 .skills__container .skills__content {
   background-color: var(--container-color);
-  padding: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   border-radius: 1.25rem;
 }
 
@@ -490,5 +491,82 @@ img {
       grid-template-columns: repeat(3, 1fr);
   -webkit-column-gap: 2.5rem;
           column-gap: 2.5rem;
+  padding: 1rem;
+}
+
+.works .work__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 0.75rem;
+          column-gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.works .work__filter .work__item {
+  cursor: pointer;
+  color: var(--title-color);
+  padding: 0.25rem 0.75rem;
+  font-weight: var(--font-medium);
+  border-radius: 0.5rem;
+  -webkit-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+
+.works .work__filter .work__item.active-work {
+  background-color: var(--first-color);
+  color: var(--body-color);
+}
+
+.works .work__container {
+  padding-top: 1rem;
+}
+
+.works .work__container .work__card {
+  background-color: var(--container-color);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.works .work__container .work__card .work__img {
+  border-radius: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.works .work__container .work__card .work__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 0.25rem;
+}
+
+.works .work__container .work__card .work__button {
+  color: var(--first-color);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: var(--small-font-size);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.works .work__container .work__card .work__button:hover .work__icon {
+  -webkit-transform: translateX(0.25rem);
+          transform: translateX(0.25rem);
+}
+
+.works .work__container .work__card .work__button .work__icon {
+  -webkit-transition: var(--main-transition);
+  transition: var(--main-transition);
+  font-size: 1rem;
 }
 /*# sourceMappingURL=main.css.map */

@@ -386,7 +386,8 @@ img {
     padding-top: 1rem;
     .skills__content {
         background-color: var(--container-color);
-        padding: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         border-radius: 1.25rem;
         .skills__title {
             font-size: var(--normal-font-size);
@@ -424,10 +425,68 @@ img {
             .second {
                 grid-template-columns: repeat(3, 1fr);
                 column-gap: 2.5rem;
+                padding: 1rem;
             }
         }
     }
 }
 
 // *============================= End Skills ==============================
+// *=======================================================================
+// *=======================================================================
+// *============================= Start Services ==========================
+.works {
+    .work__filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0.75rem;
+        margin-bottom: 2rem;
+        .work__item {
+            cursor: pointer;
+            color: var(--title-color);
+            padding: 0.25rem 0.75rem;
+            font-weight: var(--font-medium);
+            border-radius: 0.5rem;
+            transition: var(--main-transition);
+            &.active-work {
+                background-color: var(--first-color);
+                color: var(--body-color);
+            }
+        }
+    }
+    .work__container {
+        padding-top: 1rem;
+        .work__card {
+            background-color: var(--container-color);
+            padding: 1rem;
+            border-radius: 1rem;
+            .work__img {
+                border-radius: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            .work__title {
+                font-size: var(--normal-font-size);
+                font-weight: var(--font-medium);
+                margin-bottom: 0.25rem;
+            }
+            .work__button {
+                color: var(--first-color);
+                width: max-content;
+                font-size: var(--small-font-size);
+                display: flex;
+                align-items: center;
+                &:hover .work__icon {
+                    transform: translateX(0.25rem);
+                }
+                .work__icon {
+                    transition: var(--main-transition);
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// *============================= End Services ============================
 // *=======================================================================
