@@ -5,14 +5,19 @@
     --header-height: 3.5rem;
     // ========================== Start Colrs ==========================
     /*
-color mode HSL(hue,saturation,lightness)
-*/
-    --first-hue: 250;
-    --sat: 66%;
+    color mode HSL(hue,saturation,lightness)
+        --blue     : hsl(207,90%,75%)
+        --purple   : hsl(250,66%,72%) 
+        --pink     : hsl(356,66%,75%) 
+        --teal     : hsl(174,63%,62%) 
+    */
+    --first-hue: 207;
+    --sat: 90%;
     --lig: 75%;
     --second-hue: 219;
     --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
     --first-color-alt: hsl(var(--first-hue), var(--sat), 71%);
+    /*-4%*/
     --title-color: hsl(var(--second-hue), 15%, 95%);
     --text-color: hsl(var(--second-hue), 8%, 75%);
     --text-color-light: hsl(var(--second-hue), 4%, 55%);
@@ -85,7 +90,6 @@ textarea {
 body {
     background-color: var(--body-color);
     color: var(--text-color);
-    min-height: 5000px;
     transform: var(--main-transition);
 }
 
@@ -694,4 +698,160 @@ body.light-theme {
 }
 
 // *============================= End Light Theme  ========================
+// *=======================================================================
+// *=======================================================================
+// *============================= Start Responsive   ======================
+// small devices  : 
+@media screen and(max-width:320px) {
+    .nav__menu {
+        padding: 0.6rem 1rem !important;
+    }
+    .home__buttons {
+        flex-direction: column;
+    }
+    .home__handle {
+        width: 150px;
+        height: 253px;
+    }
+    .home__container .home__handle {
+        width: 150px;
+        height: 240px;
+    }
+    .about__info {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .skill__box {
+        column-gap: 1rem !important;
+    }
+    .skill__name {
+        font-size: var(--small-font-size) !important;
+    }
+    .skills__content {
+        width: 250px;
+        .skill__box {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .works .work__filter {
+        column-gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        .work__item {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+// medium devices : 
+@media screen and(min-width:576px) {
+    .nav__menu {
+        width: 328px !important;
+    }
+    .about__info {
+        width: 500px;
+        margin: 0 auto 2rem;
+    }
+    .about__description {
+        padding: 0 4rem;
+    }
+    .skills__container {
+        justify-content: center;
+    }
+    .work__container {
+        justify-content: center;
+    }
+    .work__img {
+        width: 295px;
+    }
+    .contact__info {
+        grid-template-columns: 300px;
+        justify-content: center;
+    }
+    .contact__form {
+        width: 360px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and(min-width:767px) {
+    .work__container {
+        grid-template-columns: repeat(2, max-content);
+    }
+    .contact__container {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: center;
+        column-gap: 3rem;
+    }
+}
+
+@media screen and(min-width:992px) {
+    .section {
+        padding: 6.5rem 0 1rem;
+    }
+    .section__title {
+        margin-bottom: 3.5rem;
+    }
+    .nav {
+        height: calc(var(--header-height) + 1rem) !important;
+    }
+    .home__handle {
+        width: 270px !important;
+        height: 380px !important;
+    }
+    .home__social-link {
+        padding: 0.4rem !important;
+    }
+    .home__social::after {
+        transform: rotate(90deg) translate(16px, 0);
+    }
+    .home__scroll-icon {
+        font-size: 2rem;
+    }
+    #theme-button {
+        font-size: 1.4rem;
+    }
+    .about__container {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        column-gap: 4rem;
+    }
+    .about__img {
+        width: 350px;
+    }
+    .about__data {
+        text-align: left !important;
+    }
+    .about__description {
+        line-height: 1.7rem;
+        font-size: 16px;
+        padding: 0 4rem 0 0;
+        text-align: left;
+    }
+    .about__info {
+        justify-content: initial;
+    }
+    .about__box {
+        text-align: center;
+        padding: 1rem 1.25rem;
+    }
+    .about__container .about__img {
+        width: 300px;
+    }
+    .skills__container {
+        grid-template-columns: repeat(2, 350px);
+        column-gap: 3.5rem;
+    }
+    .work__container {
+        gap: 3rem;
+    }
+    .work__img {
+        margin-bottom: 1rem;
+    }
+    .work__title {
+        margin-bottom: .5rem;
+    }
+}
+
+// *============================= End Responsive  =========================
 // *=======================================================================
