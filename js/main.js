@@ -91,3 +91,46 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data`)
 sr.reveal(`.home__handle`, { delay: 700 })
 sr.reveal(`.home__social,.home__scroll`, { delay: 900, origin: 'bottom' })
+
+
+//!====================================
+//!======= Progress Bar On Scrolling :
+const skillSection = document.getElementById('progress-section'),
+    progressBars = document.querySelectorAll('.skills_level-progress');
+
+window.addEventListener('scroll', () => {
+    const sectionPosition = skillSection.getBoundingClientRect().top,
+        screenPosition = window.innerHeight / 2;
+
+    if (sectionPosition < screenPosition) {
+        progressBars.forEach(progressBar => {
+            const value = progressBar.dataset.progress;
+            progressBar.style.opacity = 1;
+            progressBar.style.width = `${value}%`;
+            progressBar.querySelector('span').style.opacity = 1;
+
+            let counter = 0;
+            setInterval(() => {
+                if (counter == value) {
+                    clearInterval()
+                } else {
+                    counter += 1;
+                    progressBar.querySelector('span').innerHTML = counter + "%";
+                }
+            }, 25)
+        });
+    } else {
+        progressBars.forEach(p => {
+            const value = p.dataset.progress;
+            p.style.opacity = 0;
+            p.style.width = 0;
+            p.querySelector('span').style.opacity = 0;
+        });
+    }
+
+    let upto = 0;
+
+
+
+
+});

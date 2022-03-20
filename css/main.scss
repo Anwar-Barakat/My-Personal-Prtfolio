@@ -11,12 +11,12 @@
         --pink     : hsl(356,66%,75%) 
         --teal     : hsl(174,63%,62%) 
     */
-    --first-hue: 207;
-    --sat: 90%;
-    --lig: 75%;
+    --first-hue: 174;
+    --sat: 63%;
+    --lig: 62%;
     --second-hue: 219;
     --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
-    --first-color-alt: hsl(var(--first-hue), var(--sat), 71%);
+    --first-color-alt: hsl(var(--first-hue), var(--sat), 58%);
     /*-4%*/
     --title-color: hsl(var(--second-hue), 15%, 95%);
     --text-color: hsl(var(--second-hue), 8%, 75%);
@@ -431,6 +431,7 @@ body.light-theme {
         padding-top: 1rem;
         padding-bottom: 1rem;
         border-radius: 1.25rem;
+        height: fit-content;
         .skills__title {
             font-size: var(--normal-font-size);
             font-weight: var(--font-medium);
@@ -439,15 +440,16 @@ body.light-theme {
             margin-bottom: 1.5rem;
         }
         .skill__box {
+            padding: 0 1.5rem 1rem;
             display: flex;
-            justify-content: center;
-            column-gap: 2.5rem;
+            flex-direction: column;
             .skill__group {
                 display: grid;
                 align-content: flex-start;
-                row-gap: 1rem;
+                row-gap: 1.75rem;
                 .skill__data {
                     display: flex;
+                    flex-direction: column;
                     column-gap: 0.5rem;
                     .bxs-badge-check {
                         font-size: 1rem;
@@ -461,13 +463,37 @@ body.light-theme {
                     .skills_level {
                         font-size: var(--tiny-font-size);
                         font-weight: var(--font-medium);
+                        width: 100%;
+                        height: 5px;
+                        border: 1px solid rgba(33, 49, 69, 1);
+                        border-radius: 4px;
+                        box-shadow: 0 0 10px var(--body-color);
+                        position: relative;
+                        .skills_level-progress {
+                            background-color: var(--first-color);
+                            border-radius: 4px;
+                            height: 3px;
+                            position: absolute;
+                            top: 0;
+                            left: 0.2px;
+                            width: 0%;
+                            opacity: 0;
+                            transition: 1s ease-in-out;
+                            span {
+                                position: absolute;
+                                right: 0;
+                                top: -1rem;
+                                background: var(--first-color);
+                                color: var(--body-color);
+                                padding: 0px 4px;
+                                border-radius: 2px;
+                                font-size: 9px;
+                                opacity: 0;
+                                transition: 1s ease-in-out;
+                            }
+                        }
                     }
                 }
-            }
-            .second {
-                grid-template-columns: repeat(3, 1fr);
-                column-gap: 2.5rem;
-                padding: 1rem;
             }
         }
     }
@@ -499,6 +525,7 @@ body.light-theme {
     }
     .work__container {
         padding-top: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         .work__card {
             background-color: var(--container-color);
             padding: 1rem;
@@ -695,6 +722,9 @@ body.light-theme {
     &::-webkit-scrollbar-thumb:hover {
         background-color: hsl(var(--second-hue), 8%, 44%);
     }
+    .skills_level {
+        border: 1px solid var(--text-color-light) !important;
+    }
 }
 
 // *============================= End Light Theme  ========================
@@ -702,7 +732,7 @@ body.light-theme {
 // *=======================================================================
 // *============================= Start Responsive   ======================
 // small devices  : 
-@media screen and(max-width:320px) {
+@media screen and(max-width:300px) {
     .nav__menu {
         padding: 0.6rem 1rem !important;
     }
@@ -727,7 +757,6 @@ body.light-theme {
         font-size: var(--small-font-size) !important;
     }
     .skills__content {
-        width: 250px;
         .skill__box {
             flex-direction: column;
             align-items: center;
@@ -740,6 +769,9 @@ body.light-theme {
         .work__item {
             margin-bottom: 0.5rem;
         }
+    }
+    .skills_level {
+        border: 1px solid hsla(222, 9%, 72%, 1);
     }
 }
 
@@ -755,9 +787,6 @@ body.light-theme {
     .about__description {
         padding: 0 4rem;
     }
-    .skills__container {
-        justify-content: center;
-    }
     .work__container {
         justify-content: center;
     }
@@ -772,8 +801,12 @@ body.light-theme {
         width: 360px;
         margin: 0 auto;
     }
+    .skills__container {
+        width: 500px;
+    }
 }
 
+// Large devices : 
 @media screen and(min-width:767px) {
     .work__container {
         grid-template-columns: repeat(2, max-content);
@@ -783,8 +816,17 @@ body.light-theme {
         justify-content: center;
         column-gap: 3rem;
     }
+    .skills__container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        column-gap: 2.5rem;
+        justify-content: center;
+    }
+    .skills__container {
+        width: unset;
+    }
 }
 
+// Xlarge devices : 
 @media screen and(min-width:992px) {
     .section {
         padding: 6.5rem 0 1rem;
@@ -837,10 +879,6 @@ body.light-theme {
     }
     .about__container .about__img {
         width: 300px;
-    }
-    .skills__container {
-        grid-template-columns: repeat(2, 350px);
-        column-gap: 3.5rem;
     }
     .work__container {
         gap: 3rem;
