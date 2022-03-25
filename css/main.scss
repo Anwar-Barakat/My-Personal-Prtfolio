@@ -200,13 +200,6 @@ body.light-theme {
     color: var(--text-color-light);
 }
 
-.active-link {
-    background: linear-gradient(180deg, hsla(var(--first-hue), var(--sat), var(--lig), 1), hsla(var(--first-hue), var(--sat), var(--lig), .2));
-    box-shadow: 0 0 2rem hsla(var(--first-hue), var(--sat), var(--lig), .4);
-    color: var(--title-color);
-    font-weight: 900;
-}
-
 .button {
     display: inline-block;
     background-color: var(--first-color);
@@ -255,29 +248,45 @@ body.light-theme {
         .nav__menu {
             position: fixed;
             bottom: 1rem;
-            background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
             width: 90%;
-            border-radius: 3rem;
-            padding: 0.6rem 2.25rem;
-            backdrop-filter: blur(10px);
-            left: 50%;
             transform: translateX(-50%);
+            left: 50%;
             transition: var(--main-transition);
             .nav__list {
+                padding: 0.6rem 2.25rem;
+                background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
                 display: flex;
+                border-radius: 3rem;
+                backdrop-filter: blur(10px);
                 justify-content: space-between;
                 align-items: center;
+                position: relative;
+                z-index: 1000;
                 .nav__link {
-                    color: var(--text-color);
+                    color: white;
                     font-size: 1.25rem;
                     padding: 0.5rem;
                     display: flex;
                     border-radius: 0.5rem;
                     transition: 1s;
+                    opacity: .5;
+                    z-index: var(--z-modal);
+                    backdrop-filter: blur(15px);
                 }
             }
         }
     }
+}
+
+.active-link {
+    background: linear-gradient(180deg, hsla(var(--first-hue), var(--sat), var(--lig), 1), hsla(var(--first-hue), var(--sat), var(--lig), .2));
+    box-shadow: 0 0 2rem hsla(var(--first-hue), var(--sat), var(--lig), .4);
+    color: var(--title-color);
+    font-weight: 900;
+}
+
+.header .nav .nav__menu .nav__list .nav__link.active-link {
+    opacity: 1;
 }
 
 // **============================= End Header =============================
